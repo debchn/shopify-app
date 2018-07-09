@@ -13,6 +13,7 @@ This project was bootstrapped with [Create Shopify App](https://github.com/Shopi
   - [yarn build](#yarn-build)
   - [yarn nuke](#yarn-nuke)
 - [Editor](#editor)
+- [Shopify App Authentication](#shopify-app-authentication)
 
 ## Folder Structure
 
@@ -104,3 +105,29 @@ Builds production assets and saves them to the filesystem.
 It is recommended that you use [VS Code](https://code.visualstudio.com) as text editor with this project.
 
 `.vscode` contains the recommended editor settings and the extensions you should install for in editor linting and prettier formating setup.
+
+## Shopify App Authentication
+
+For general information on how to authenticate an Shopify app, follow document here:
+https://help.shopify.com/en/api/getting-started/authentication
+
+For setting up in this project, follow steps below.
+
+#### Step 1
+
+To setup Shopify app authentication, copy and paste `.env.example` and rename it to `.env` (if the file don't exist already)
+
+#### Step 2
+
+Make sure the `.env` are filled in with the correct Shopify app credentials in `SHOPIFY_API_KEY`, `SHOPIFY_SECRET`
+
+If there is a development shop you like to use, update the value in `TEST_SHOP`
+
+#### Step 3
+
+Update `config/app.js` => `scopes` with the list of permission this app needs using values from this document
+https://help.shopify.com/en/api/getting-started/authentication/oauth/scopes
+
+#### Step 4
+
+Run `yarn` && `yarn dev` and view the page in browser to install the app in your test shop.

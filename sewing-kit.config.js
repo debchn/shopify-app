@@ -1,6 +1,4 @@
-const dotenv = require('dotenv');
-
-dotenv.config();
+require('dotenv').config();
 
 const path = require('path');
 const {ip, port, cdnUrl} = require('./config/server');
