@@ -3,6 +3,7 @@ import 'isomorphic-fetch';
 import * as Koa from 'koa';
 import * as session from 'koa-session';
 import shopifyAuth, {verifyRequest} from '@shopify/koa-shopify-auth';
+import graphQLProxy from '@shopify/koa-shopify-graphql-proxy';
 
 import {ip, port} from '../config/server';
 import {apiKey, secret, scopes, testShop} from '../config/app';
@@ -23,6 +24,8 @@ app.use(
     },
   }),
 );
+
+app.use(graphQLProxy() as any);
 
 const fallbackRoute = testShop === '' ? undefined : `/auth?shop=${testShop}`;
 app.use(

@@ -4,3 +4,4 @@ build
 coverage
 .sewing-kit
 *.svg
+app/types/graphql.ts
