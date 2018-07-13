@@ -1,0 +1,7 @@
+query CustomerShowQuery($customerId: ID!) {
+  customer(id: $customerId) {
+    id
+    firstName
+    lastName
+  }
+}
