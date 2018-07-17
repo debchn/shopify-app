@@ -36,36 +36,36 @@ After creation, your project should look like this:
 │   └── render-app.tsx (Server rendering wrappers that render <App />, written as a Koa middleware)
 │
 └── app
-    ├── components (shared components in between sections)
+    ├── components (Shared components in between sections)
     │
-    ├── foundation (base components for one use app concern things)
+    ├── foundation (Base components for one-use app-concerned things)
     │   ├── App
-    │   │   └── App.tsx (Setup all the providers for the app)
+    │   │   └── App.tsx (Sets up all the providers for the app)
     │   └── Routes
-    │        └── Routes.tsx (The app's first level routing file)
+    │        └── Routes.tsx (The app's first-level routing file)
     │
-    └── sections (container views that compose presentation components into UI blocks; usually map closely to 1st level route in the app)
+    └── sections (Container views that compose presentation components into UI blocks; usually map closely to the first-level route in the app)
         │
         ├── Home
         │   └── HomeIndex
         │        └── HomeIndex.tsx (The app's default page)
         │
-        └── {SectionName} (future section)
+        └── {SectionName} (Future section)
             ├── {SectionName}Index
             │    └── {SectionName}Index.tsx
             │
             ├── {SectionName}Show
             │    └── {SectionName}Show.tsx
             │
-            └── index.tsx (The app's nested routing file for this sepecific section)
+            └── index.tsx (The app's nested routing file for this specific section)
 ```
 
-To add more routes, create similar folder sturcture as `sections/Home` into `sections` folder. Then edit `app/foundation/Routes/Routes.tsx` to add the desire route.
+To add more routes, create a similar folder structure as `sections/Home` in the `sections` folder. Then edit `app/foundation/Routes/Routes.tsx` to add the desired route.
 
 ## Available Scripts
 
-All of the scripts listed below are based on `sewing-kit`'s commands
-Read more about the these commands [here](https://github.com/Shopify/sewing-kit/blob/master/docs/commands)
+All of the scripts listed below are based on `sewing-kit`'s commands.
+Read more about the these commands [here](https://github.com/Shopify/sewing-kit/blob/master/docs/commands).
 
 ### `yarn dev`
 
@@ -78,15 +78,15 @@ Runs all linters and tests
 
 ### `yarn test`
 
-Run Jest test in watch mode on changed tests
+Runs Jest test in watch mode on changed tests
 
 ### `yarn lint`
 
-Run all of app's linter against JavaScript, TypeScript, SCSS. It also detect unformatted JavaScript, JSON, Markdown and GraphQL. Running the format command fix the unformatted code.
+Runs all of the app's linters against JavaScript, TypeScript, and SCSS. It also detects unformatted JavaScript, JSON, Markdown and GraphQL. Running the format command fixes the unformatted code.
 
 ### `yarn type-check`
 
-Run TypeScript type checking
+Runs TypeScript type checking
 
 ### `yarn format`
 
@@ -102,32 +102,32 @@ Builds production assets and saves them to the filesystem.
 
 ## Editor
 
-It is recommended that you use [VS Code](https://code.visualstudio.com) as text editor with this project.
+It is recommended that you use [VS Code](https://code.visualstudio.com) as a text editor with this project.
 
-`.vscode` contains the recommended editor settings and the extensions you should install for in editor linting and prettier formating setup.
+`.vscode` contains the recommended editor settings and the extensions you should install for in-editor linting and prettier formatting setup.
 
 ## Shopify App Authentication
 
-For general information on how to authenticate an Shopify app, follow document here:
+For general information on how to authenticate an Shopify app, follow the document here:
 https://help.shopify.com/en/api/getting-started/authentication
 
-For setting up in this project, follow steps below.
+For setting up your project, follow the steps below.
 
 #### Step 1
 
-To setup Shopify app authentication, copy and paste `.env.example` and rename it to `.env` (if the file don't exist already)
+To setup Shopify app authentication, copy and paste `.env.example` and rename it to `.env` (if the file doesn't exist already).
 
 #### Step 2
 
-Make sure the `.env` are filled in with the correct Shopify app credentials in `SHOPIFY_API_KEY`, `SHOPIFY_SECRET`
+Make sure that `.env` has the correct Shopify app credentials filled in for the variables `SHOPIFY_API_KEY` and `SHOPIFY_SECRET`.
 
-If there is a development shop you like to use, update the value in `TEST_SHOP`
+If there is a development shop you like to use, update the value in `TEST_SHOP`.
 
 #### Step 3
 
-Update `config/app.js` => `scopes` with the list of permission this app needs using values from this document
+Update `config/app.js` => `scopes` with the list of permissions this app needs using values from this document
 https://help.shopify.com/en/api/getting-started/authentication/oauth/scopes
 
 #### Step 4
 
-Run `yarn` && `yarn dev` and view the page in browser to install the app in your test shop.
+Run `yarn` && `yarn dev` and view the page in a browser to install the app in your test shop.
